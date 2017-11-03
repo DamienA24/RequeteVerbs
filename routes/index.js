@@ -13,5 +13,13 @@ router.post('/forms-:number(\\d+)', function(req, res){
   console.log(req.body.username);
 })
 
+/*All verbs page middleware. */
+router.use('/superMiddleware', function(req, res, next){
+  console.log('hello middleware');
+  next();
+}, function (req, res) {
+  res.send("Hello world !");
+});
+
 
 module.exports = router;
