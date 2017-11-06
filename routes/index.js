@@ -8,6 +8,7 @@ router.get('/',(req, res)=>{
 
 router.get('/session-in', (req, res)=>{
   req.session.song = "be bop a lula";
+  res.end();
 })
 
 router.get('/session-out',(req, res)=>{
