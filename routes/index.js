@@ -2,6 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 /* GET home page. */
+router.get('/',(req, res)=>{
+  res.send('Page accueil')
+})
+
+router.get('/session-in', (req, res)=>{
+  req.session.song = "be bop a lula";
+})
+
+router.get('/session-out',(req, res)=>{
+  res.send(req.session.song);
+})
+
 router.get('/forms-:number(\\d+)', function(req, res){
   res.send('Du mal à piger cette quête, flou ces requêtes');
   console.log(req.params.number); 
